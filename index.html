@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rosavia Bouquet</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"/>
+
+ <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+
+<style>
+
+/* ======================
+   ABOUT – ORGANIC STYLE
+====================== */
+
+.about-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/* LEFT */
+.about-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.phone {
+  width: 320px;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* SIMPLE FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* RIGHT */
+.about-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #7d0017;
+  margin-bottom: 18px;
+}
+
+.about-content .lead {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 22px;
+}
+
+.about-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+}
+
+.about-points li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.about-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #7d0017;
+}
+
+.partner {
+  font-size: 15px;
+  color: #555;
+}
+
+.partner a {
+  color: #7d0017;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .phone {
+    width: 260px;
+  }
+}
+
+    :root{
+      --maroon:#7d0017;
+      --rose:#ffd6e2;
+      --cream:#fff5f8;
+      --dark:#1b1b1b;
+      --muted:#6f6f6f;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      color:var(--dark);
+      min-height:100vh;
+
+      /* === ABSTRACT BOUQUET BACKGROUND === */
+      background:
+        radial-gradient(circle at 15% 25%, rgba(255,190,210,.55), transparent 60%),
+        radial-gradient(circle at 85% 20%, rgba(255,210,225,.45), transparent 65%),
+        radial-gradient(circle at 50% 80%, rgba(255,195,215,.55), transparent 70%),
+        radial-gradient(circle at 45% 50%, rgba(255,230,240,.85), transparent 75%),
+        linear-gradient(135deg, #fff0f6, #ffe6ef);
+      background-attachment: fixed;
+    }
+
+    .container{
+      max-width:1150px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* NAV */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      box-shadow:0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .brand{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      font-weight:700;
+      color:var(--maroon);
+      text-decoration:none;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:var(--dark);
+      font-weight:600;
+      margin-left:16px;
+    }
+
+    .btn{
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:var(--maroon);
+      color:#fff;
+    }
+
+    .btn-ghost{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      color:var(--maroon);
+    }
+
+    /* HERO */
+    .hero{
+      padding:80px 0 60px;
+      display:flex;
+      gap:40px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .hero-left{
+      flex:1;
+      min-width:280px;
+    }
+
+    .hero-title{
+      font-family:'Playfair Display',serif;
+      font-size:46px;
+      line-height:1.05;
+      margin:0 0 14px;
+    }
+
+    .hero-sub{
+      font-size:18px;
+      color:var(--muted);
+      max-width:520px;
+    }
+
+    .rotating{
+      color:var(--maroon);
+      font-weight:700;
+    }
+
+    .hero-cta{
+      margin-top:26px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hero-media{
+      flex:1;
+      min-width:280px;
+    }
+
+    .media-card{
+      border-radius:20px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 20px 45px rgba(125,0,23,.25);
+      aspect-ratio:16/10;
+    }
+
+    .media-card video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* CATEGORIES */
+    .cats{
+      padding:40px 0;
+    }
+
+    .cats-scroll{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding-bottom:10px;
+    }
+
+    .cat{
+      min-width:140px;
+      background:#fff;
+      border-radius:999px;
+      padding:18px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+      transition:.35s;
+      cursor:pointer;
+    }
+
+    .cat:hover{
+      transform:translateY(-6px) scale(1.05);
+      box-shadow:0 16px 35px rgba(125,0,23,.25);
+    }
+
+    .cat span{
+      display:block;
+      margin-top:8px;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    /* BEST */
+    .section{
+      padding:40px 0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      padding:14px;
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      transition:.35s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 18px 40px rgba(125,0,23,.25);
+    }
+
+    .img-box{
+      height:180px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#ffd6e2,#fff0f6);
+      margin-bottom:10px;
+    }
+
+    /* TEAM */
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:16px;
+    }
+
+    .team-card{
+      background:#fff;
+      border-radius:14px;
+      padding:14px;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,.05);
+      transition:.35s;
+    }
+
+    .team-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 30px rgba(125,0,23,.25);
+    }
+
+    .avatar{
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#ffd6e2,#fff0f6);
+      margin:0 auto 8px;
+    }
+
+.site-footer{
+  background: linear-gradient(180deg, #64181c, #3f0f12);
+  color:#f5eada;
+  padding:60px 0 0;
+  margin-top:80px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.footer-brand h3{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  margin:0 0 12px;
+}
+.footer-brand h3 span{
+  color:#f5dfda;
+}
+.footer-brand p{
+  font-size:14px;
+  line-height:1.7;
+  color:rgba(245,234,218,.85);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4{
+  margin-bottom:14px;
+  font-size:16px;
+  font-weight:600;
+}
+
+.footer-links a{
+  display:block;
+  color:rgba(245,234,218,.85);
+  text-decoration:none;
+  margin-bottom:10px;
+  font-size:14px;
+  transition:.25s;
+}
+.footer-links a:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+.footer-contact p{
+  font-size:14px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:rgba(245,234,218,.85);
+}
+
+.social-icons{
+  display:flex;
+  gap:12px;
+  margin-top:8px;
+}
+.social-icons a{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:18px;
+  transition:.3s;
+}
+.social-icons a:hover{
+  background:#fff;
+  color:#64181c;
+  transform:translateY(-4px);
+}
+
+.footer-bottom{
+  margin-top:50px;
+  padding:18px 0;
+  text-align:center;
+  font-size:13px;
+  background:rgba(0,0,0,.15);
+  color:rgba(245,234,218,.8);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .site-footer{
+    text-align:center;
+  }
+  .footer-contact p{
+    justify-content:center;
+  }
+  .social-icons{
+    justify-content:center;
+  }
+}
+
+
+    /* TESTIMONIAL SECTION */
+.testimonial-section {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #fff 0%, #faf6f7 100%);
+}
+
+.testimonial-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.testimonial-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #4a1d2f;
+}
+
+.testimonial-header p {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: #6b4c5a;
+}
+
+.line-decor {
+  width: 70px;
+  height: 3px;
+  margin: 20px auto 0;
+  background: linear-gradient(90deg, #b76e79, #7d0017);
+  border-radius: 10px;
+}
+
+/* GRID */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.testimonial-card {
+  background: rgba(255,255,255,0.85);
+  padding: 35px 30px;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(125,0,23,0.08);
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(125,0,23,0.12);
+}
+
+/* HIGHLIGHT CARD */
+.testimonial-card.highlight {
+  background: linear-gradient(145deg, #7d0017, #a4162a);
+  color: #fff;
+}
+
+.testimonial-card.highlight .testimonial-text,
+.testimonial-card.highlight h4,
+.testimonial-card.highlight span {
+  color: #fff;
+}
+
+/* TEXT */
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #3f2a33;
+  margin-bottom: 28px;
+}
+
+/* USER */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b76e79, #7d0017);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.testimonial-user h4 {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #4a1d2f;
+}
+
+.testimonial-user span {
+  font-size: 0.8rem;
+  color: #7a5b67;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav">
+    <div class="container nav-inner">
+        <a class="brand" href="#" style="display:flex;align-items:center;gap:10px;">
+            <img src="rosavia/logoo.png" alt="Rosavia Logo" style="width:40px;height:40px;object-fit:contain;">
+            Rosavia Bouquet
+        </a>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html">Kontak</a>
+           <div style="position:relative;display:inline-block;">
+  <button class="btn btn-ghost"
+          onclick="toggleSocialMenu()"
+          style="border:none;cursor:pointer;">
+    Ikuti Kami
+  </button>
+
+  <div id="socialMenu"
+       style="display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:12px;box-shadow:0 12px 35px rgba(0,0,0,.12);min-width:200px;z-index:40;margin-top:10px;overflow:hidden;">
+
+    <a href="https://www.instagram.com/rosaviabouquet"
+       target="_blank"
+       style="display:flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;">
+      <i class="lab la-instagram" style="font-size:18px;color:#e4405f;"></i>
+      Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/17ZuBz5hnX/"
+       target="_blank"
+       style="display:flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;">
+      <i class="lab la-facebook-f" style="font-size:18px;color:#1877f2;"></i>
+      Facebook
+    </a>
+
+    <a href="https://www.tiktok.com/@rosaviabouquet"
+       target="_blank"
+       style="display:flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none;color:var(--dark);font-size:14px;font-weight:500;">
+      <i class="fa-brands fa-tiktok" style="font-size:17px;color:#000;"></i>
+      TikTok
+    </a>
+
+  </div>
+</div>
+
+            <script>
+              function toggleSocialMenu() {
+              const menu = document.getElementById('socialMenu');
+              menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+              }
+              document.addEventListener('click', (e) => {
+              if (!e.target.closest('[onclick="toggleSocialMenu()"]') && !e.target.closest('#socialMenu')) {
+                document.getElementById('socialMenu').style.display = 'none';
+              }
+              });
+            </script>
+        <div style="position:relative;display:inline-block;">
+          <button class="btn btn-primary" onclick="toggleOrderMenu()" style="border:none;cursor:pointer;margin-left:8px;">Order</button>
+          <div id="orderMenu" style="display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:12px;box-shadow:0 12px 35px rgba(0,0,0,.12);min-width:180px;z-index:40;margin-top:8px;overflow:hidden;">
+            <a href="https://wa.me/6288270933960" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;transition:.2s;">
+              <i class="lab la-whatsapp" style="font-size:18px;color:#25d366;"></i> WhatsApp
+            </a>
+            </a>
+            <a href="https://shopee.co.id/rosavia.bouqet" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;transition:.2s;">
+              <i class="las la-shopping-bag" style="font-size:18px;color:#ee4d2d;"></i> Shopee
+            </a>
+            <a href="https://tokopedia.link/i1d8DERo8Wb" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;color:var(--dark);font-size:14px;font-weight:500;transition:.2s;">
+              <i class="las la-store" style="font-size:18px;color:#1db446;"></i> Tokopedia
+            </a>
+          </div>
+        </div>
+
+        <script>
+          function toggleOrderMenu() {
+            const menu = document.getElementById('orderMenu');
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+          }
+          document.addEventListener('click', (e) => {
+            if (!e.target.closest('[onclick="toggleOrderMenu()"]') && !e.target.closest('#orderMenu')) {
+              document.getElementById('orderMenu').style.display = 'none';
+            }
+          });
+        </script>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-left">
+    <h1 class="hero-title">
+     Pesan <span class="rotating">Hadiah</span> Bouquet
+    Mudah dan Cepat<br>
+    </h1>
+    <p class="hero-sub">
+      Handmade bouquet, hadiah wisuda, anniversary, dan momen spesial lainnya dengan sentuhan elegan.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://wa.me/6288270933960">Order Sekarang</a>
+      <a class="btn btn-ghost" href="katalog.html">Lihat Katalog</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <div class="media-card">
+      <!-- bisa ganti video -->
+      <video autoplay muted loop>
+        <source src="rosavia/opening.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-container">
+
+    <!-- LEFT VISUAL -->
+    <div class="about-visual">
+      <img src="rosavia/pegangbunga.jpg" alt="Rosavia Bouquet Preview" class="phone">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-content">
+      <h2>Tentang Rosavia Bouquet</h2>
+
+      <p class="lead">
+        Rosavia Bouquet adalah usaha kreatif di bidang florist dan gift arrangement
+        yang menghadirkan bouquet elegan untuk momen spesial.
+      </p>
+
+      <ul class="about-points">
+        <li>Rangkaian bouquet dibuat dengan detail dan ketulusan</li>
+        <li>Resmi berdiri sejak <strong>24 September 2025</strong></li>
+        <li>Melayani bouquet wisuda, anniversary, ulang tahun & custom</li>
+      </ul>
+
+      <p class="partner">
+        Bermitra dengan
+        <a href="https://instagram.com/syee_shop" target="_blank">@syee_shop</a>
+        dalam kolaborasi kreatif.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CATEGORIES -->
+<section class="cats container" id="catalog">
+  <h2 style="font-family:Playfair Display">Kategori</h2>
+  <div class="cats-scroll">
+     <div class="cat" onclick="openModal('rosavia/bunga.jpg', 'Buket Bunga')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/bunga.jpg" alt="Buket Bunga" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Bouquet Bunga</span>
+     </div>
+     <div class="cat" onclick="openModal('rosavia/money.jpg', 'Buket Uang')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/money.jpg" alt="Buket Uang" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Bouquet Uang</span>
+     </div>
+     <div class="cat" onclick="openModal('rosavia/snack.jpg', 'Buket Snack')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/snack.jpg" alt="Buket Snack" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Bouquet Snack</span>
+     </div>
+     <div class="cat" onclick="openModal('rosavia/coffee.jpg', 'Buket Kopi')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/coffee.jpg" alt="Buket Kopi" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Bouquet Kopi</span>
+     </div>
+     <div class="cat" onclick="openModal('rosavia/rokok.jpg', 'Buket Rokok')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/rokok.jpg" alt="Buket Rokok" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Bouquet Rokok</span>
+     </div>
+     <div class="cat" onclick="openModal('rosavia/board.jpg', 'Papan Bunga')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/board.jpg" alt="Papan Bunga" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Papan Bunga</span>
+     </div>
+     <div class="cat" onclick="openModal('rosavia/selempang.jpg', 'Selempang Wisuda')">
+      <div style="width:100%;height:80px;border-radius:10px;background:#fff;padding:4px;box-shadow:0 4px 12px rgba(125,0,23,.15);position:relative;">
+       <img src="rosavia/selempang.jpg" alt="Selempang Wisuda" style="width:100%;height:100%;border-radius:8px;object-fit:cover;cursor:pointer;">
+       <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:90%;height:6px;background:rgba(125,0,23,.12);border-radius:50%;filter:blur(4px);"></div>
+      </div>
+      <span>Selempang Wisuda</span>
+     </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center;" onclick="closeModal(event)">
+    <div style="background:#fff;padding:20px;border-radius:14px;max-width:400px;width:90%;position:relative;" onclick="event.stopPropagation()">
+       <button onclick="closeModal()" style="position:absolute;top:10px;right:10px;border:none;font-size:24px;cursor:pointer;background:none;">×</button>
+       <img id="modalImg" src="" alt="" style="width:100%;border-radius:10px;margin-bottom:12px;">
+       <h3 id="modalTitle" style="margin:0;font-family:Playfair Display;text-align:center;"></h3>
+    </div>
+</div>
+
+<script>
+function openModal(src, title) {
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modalImg').src = src;
+    document.getElementById('modalTitle').textContent = title;
+}
+
+function closeModal(event) {
+    if (event && event.target.id !== 'modal') return;
+    document.getElementById('modal').style.display = 'none';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
+</script>
+
+<!-- BEST -->
+<section class="section container">
+    <h2 style="font-family:Playfair Display">Favorit Saat Ini</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="img-box" style="background-image:url('rosavia/prod1.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;"></div>
+            <div style="font-weight:600;margin-bottom:8px;">Bouquet Happy New Years</div>
+            <div style="color:var(--maroon);font-weight:700;margin-bottom:10px;">Rp 100.000</div>
+            <a class="btn btn-primary" href="https://wa.me/6288270933960" style="width:100%;text-align:center;">Pesan</a>
+        </div>
+        <div class="card">
+            <div class="img-box" style="background-image:url('rosavia/prod2.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;"></div>
+            <div style="font-weight:600;margin-bottom:8px;">Bouquet Foto</div>
+            <div style="color:var(--maroon);font-weight:700;margin-bottom:10px;">Rp 70.000</div>
+            <a class="btn btn-primary" href="https://wa.me/6288270933960" style="width:100%;text-align:center;">Pesan</a>
+        </div>
+        <div class="card">
+            <div class="img-box" style="background-image:url('rosavia/prod3.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;"></div>
+            <div style="font-weight:600;margin-bottom:8px;">Bouquet Bunga Kering</div>
+            <div style="color:var(--maroon);font-weight:700;margin-bottom:10px;">Rp 120.000</div>
+            <a class="btn btn-primary" href="https://wa.me/6288270933960" style="width:100%;text-align:center;">Pesan</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- TESTIMONI -->
+<section class="testimonial-section" id="testimoni">
+  <div class="testimonial-container">
+
+    <div class="testimonial-header">
+      <h2>Testimoni Pelanggan</h2>
+      <p>Apa kata mereka tentang Rosavia Bouquet?</p>
+      <div class="line-decor"></div>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          Bouquet dari Rosavia benar-benar cantik dan elegan.
+          Bunganya fresh, penataannya rapi, dan sangat sesuai dengan ekspektasi.
+          Cocok banget untuk hadiah momen spesial.
+        </p>
+        <div class="testimonial-user">
+          <div class="avatar">J</div>
+          <div>
+            <h4>Juna Rio</h4>
+            <span>Pelanggan Bouquet Bunga</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card highlight">
+        <p class="testimonial-text">
+          Pelayanannya ramah dan responsif.
+          Saya pesan bouquet custom untuk anniversary, hasilnya elegan dan terlihat premium.
+          Sangat recommended untuk yang cari florist estetik.
+        </p>
+        <div class="testimonial-user">
+          <div class="avatar">D</div>
+          <div>
+            <h4>Dani Ginting</h4>
+            <span>Pelanggan Bouquet Anniversary</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          Suka banget sama konsep dan detail bouquet-nya.
+          Cocok untuk hadiah ulang tahun maupun surprise.
+          Pengemasan juga rapi dan aman.
+        </p>
+        <div class="testimonial-user">
+          <div class="avatar">D</div>
+          <div>
+            <h4>Dewi</h4>
+            <span>Pelanggan Bouquet Ulang Tahun</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TEAM -->
+<section class="section container" id="team">
+    <h2 style="font-family:Playfair Display">Tim Rosavia Bouquet</h2>
+    <div class="team-grid">
+        <div class="team-card"><div class="avatar" style="background-image:url('rosavia/zahra.jpg');background-size:cover;background-position:center;cursor:pointer;" onclick="openModal('rosavia/zahra.jpg', 'Ardina Amelia Azzahra')"></div>Ardina Amelia Azzahra</div>
+        <div class="team-card"><div class="avatar" style="background-image:url('rosavia/Dany.jpg');background-size:cover;background-position:center;cursor:pointer;" onclick="openModal('rosavia/Dany.jpg', 'Dany Christian Gultom')"></div>Dany Christian Gultom</div>
+        <div class="team-card"><div class="avatar" style="background-image:url('rosavia/iskandar.jpg');background-size:cover;background-position:center;cursor:pointer;" onclick="openModal('rosavia/iskandar.jpg', 'Iskandar Hafidz Ibadillah')"></div>Iskandar Hafidz Ibadillah</div>
+        <div class="team-card"><div class="avatar" style="background-image:url('rosavia/krisdayanti.jpg');background-size:cover;background-position:center;cursor:pointer;" onclick="openModal('rosavia/krisdayanti.jpg', 'Krisdayanti')"></div>Krisdayanti</div>
+        <div class="team-card"><div class="avatar" style="background-image:url('rosavia/laura.jpg');background-size:cover;background-position:center;cursor:pointer;" onclick="openModal('rosavia/laura.jpg', 'Laura Siara Bilbina')"></div>Laura Siara Bilbina</div>
+        <div class="team-card"><div class="avatar" style="background-image:url('rosavia/befi.jpg');background-size:cover;background-position:center;cursor:pointer;" onclick="openModal('rosavia/befi.jpg', 'Rihadatul Befi')"></div>Rihadatul Befi</div>
+    </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h3>Rosavia <span>Bouquet</span></h3>
+      <p>
+        Florist & gift arrangement dengan sentuhan elegan dan penuh makna.
+        Menghadirkan bouquet terbaik untuk setiap momen spesial Anda.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4>Menu</h4>
+      <a href="index.html">Home</a>
+      <a href="katalog.html">Katalog</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="index.html">Tentang Kami</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4>Kontak</h4>
+      <p><i class="las la-map-marker"></i> Pekanbaru, Riau</p>
+      <p><i class="las la-phone"></i> +62 812-3456-7890</p>
+      <p><i class="las la-envelope"></i> rosaviabouquet@gmail.com</p>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-social">
+      <h4>Ikuti Kami</h4>
+      <div class="social-icons">
+        <a href="https://instagram.com/rosaviabouquet" target="_blank" aria-label="Instagram">
+          <i class="lab la-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/17ZuBz5hnX/" target="_blank" aria-label="Facebook">
+          <i class="lab la-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@rosaviabouquet" target="_blank" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    © 2025 Rosavia Bouquet. All rights reserved.
+  </div>
+</footer>
+
+
+<script>
+  const words=["Hadiah","Bunga","Gift","Parcel"];
+  let i=0;
+  const el=document.querySelector(".rotating");
+  setInterval(()=>{
+    el.style.opacity=0;
+    setTimeout(()=>{
+      i=(i+1)%words.length;
+      el.textContent=words[i];
+      el.style.opacity=1;
+    },300);
+  },2000);
+</script>
+
+</body>
+</html>

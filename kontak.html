@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontak – Rosavia Bouquet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- LINE AWESOME -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"/>
+
+<!-- FONT AWESOME (WAJIB UNTUK TIKTOK) -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+
+  <style>
+    :root{
+      --maroon:#64181c;
+      --cream:#f7efed;
+      --dark:#222;
+      --muted:#777;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      color:var(--dark);
+      min-height:100vh;
+
+      /* === ABSTRACT BOUQUET BACKGROUND === */
+      background:
+        radial-gradient(circle at 15% 25%, rgba(255,190,210,.55), transparent 60%),
+        radial-gradient(circle at 85% 20%, rgba(255,210,225,.45), transparent 65%),
+        radial-gradient(circle at 50% 80%, rgba(255,195,215,.55), transparent 70%),
+        radial-gradient(circle at 45% 50%, rgba(255,230,240,.85), transparent 75%),
+        linear-gradient(135deg, #fff0f6, #ffe6ef);
+      background-attachment: fixed;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* ================= HEADER ================= */
+     /* NAV */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      box-shadow:0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .brand{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      font-weight:700;
+      color:var(--maroon);
+      text-decoration:none;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:var(--dark);
+      font-weight:600;
+      margin-left:16px;
+    }
+
+    .btn{
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:var(--maroon);
+      color:#fff;
+    }
+
+    .btn-ghost{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      color:var(--maroon);
+    }
+
+    /* ================= TITLE ================= */
+    .page-title{
+      text-align:center;
+      color:#000000;
+      padding:70px 20px 40px;
+    }
+
+    .page-title h1{
+      font-family:'Playfair Display',serif;
+      font-size:42px;
+      margin-bottom:12px;
+    }
+
+    .page-title p{
+      opacity:.9;
+      font-size:15px;
+    }
+
+    /* ================= CONTACT ================= */
+    .contact-section{
+      max-width:1200px;
+      margin:0 auto 80px;
+      padding:0 24px;
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      gap:40px;
+    }
+
+    /* INFO */
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:32px; /* ⬅️ jarak antar aplikasi */
+}
+
+.info-card{
+  display:grid;
+  grid-template-columns: 34px 1fr;
+  align-items:center;
+  column-gap:18px;
+
+  padding:18px 20px;            /* ⬅️ ruang dalam card */
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+  transition:.3s ease;
+}
+
+.info-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.info-card i{
+  font-size:28px;
+  color:var(--maroon);
+  text-align:center;
+}
+
+.info-card h4{
+  margin:0;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.info-card a,
+.info-card p{
+  margin-top:4px;
+  font-size:14px;
+  color:#555;
+  line-height:1.5;
+  text-decoration:none;
+}
+
+.info-card a:hover{
+  color:var(--maroon);
+}
+
+    /* MAP */
+    .map-box{
+      background:#fff;
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 20px 45px rgba(0,0,0,.12);
+    }
+
+    .map-box h3{
+      font-family:'Playfair Display',serif;
+      font-size:22px;
+      margin-bottom:16px;
+    }
+
+    .map-box iframe{
+      width:100%;
+      height:360px;
+      border:0;
+      border-radius:18px;
+    }
+
+    /* ================= FOOTER ================= */
+.site-footer{
+  background: linear-gradient(180deg, #64181c, #3f0f12);
+  color:#f5eada;
+  padding:60px 0 0;
+  margin-top:80px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.footer-brand h3{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  margin:0 0 12px;
+}
+.footer-brand h3 span{
+  color:#f5dfda;
+}
+.footer-brand p{
+  font-size:14px;
+  line-height:1.7;
+  color:rgba(245,234,218,.85);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4{
+  margin-bottom:14px;
+  font-size:16px;
+  font-weight:600;
+}
+
+.footer-links a{
+  display:block;
+  color:rgba(245,234,218,.85);
+  text-decoration:none;
+  margin-bottom:10px;
+  font-size:14px;
+  transition:.25s;
+}
+.footer-links a:hover{
+  color:#fff;
+  transform:translateX(4px);
+}
+
+.footer-contact p{
+  font-size:14px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:rgba(245,234,218,.85);
+}
+
+.social-icons{
+  display:flex;
+  gap:12px;
+  margin-top:8px;
+}
+.social-icons a{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:18px;
+  transition:.3s;
+}
+.social-icons a:hover{
+  background:#fff;
+  color:#64181c;
+  transform:translateY(-4px);
+}
+
+.footer-bottom{
+  margin-top:50px;
+  padding:18px 0;
+  text-align:center;
+  font-size:13px;
+  background:rgba(0,0,0,.15);
+  color:rgba(245,234,218,.8);
+}
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:900px){
+      .contact-section{
+        grid-template-columns:1fr;
+      }
+
+      .page-title h1{
+        font-size:34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="nav">
+    <div class="container nav-inner">
+        <a class="brand" href="#" style="display:flex;align-items:center;gap:10px;">
+            <img src="rosavia/logoo.png" alt="Rosavia Logo" style="width:40px;height:40px;object-fit:contain;">
+            Rosavia Bouquet
+        </a>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html">Kontak</a>
+           <div style="position:relative;display:inline-block;">
+  <button class="btn btn-ghost"
+          onclick="toggleSocialMenu()"
+          style="border:none;cursor:pointer;">
+    Ikuti Kami
+  </button>
+
+  <div id="socialMenu"
+       style="display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:12px;box-shadow:0 12px 35px rgba(0,0,0,.12);min-width:200px;z-index:40;margin-top:10px;overflow:hidden;">
+
+    <a href="https://www.instagram.com/rosaviabouquet"
+       target="_blank"
+       style="display:flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;">
+      <i class="lab la-instagram" style="font-size:18px;color:#e4405f;"></i>
+      Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/17ZuBz5hnX/"
+       target="_blank"
+       style="display:flex;align-items:center;gap:10px;padding:14px 18px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;">
+      <i class="lab la-facebook-f" style="font-size:18px;color:#1877f2;"></i>
+      Facebook
+    </a>
+
+   <div class="info-card">
+      <i class="fab fa-tiktok"></i>
+      <div>
+        <h4>TikTok</h4>
+        <a href="https://www.tiktok.com/@rosaviabouquet">@rosaviabouquet</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+            <script>
+              function toggleSocialMenu() {
+              const menu = document.getElementById('socialMenu');
+              menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+              }
+              document.addEventListener('click', (e) => {
+              if (!e.target.closest('[onclick="toggleSocialMenu()"]') && !e.target.closest('#socialMenu')) {
+                document.getElementById('socialMenu').style.display = 'none';
+              }
+              });
+            </script>
+        <div style="position:relative;display:inline-block;">
+          <button class="btn btn-primary" onclick="toggleOrderMenu()" style="border:none;cursor:pointer;margin-left:8px;">Order</button>
+          <div id="orderMenu" style="display:none;position:absolute;top:100%;right:0;background:#fff;border-radius:12px;box-shadow:0 12px 35px rgba(0,0,0,.12);min-width:180px;z-index:40;margin-top:8px;overflow:hidden;">
+            <a href="https://wa.me/6288270933960" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;transition:.2s;">
+              <i class="lab la-whatsapp" style="font-size:18px;color:#25d366;"></i> WhatsApp
+            </a>
+            </a>
+            <a href="https://shopee.co.id/rosavia.bouqet" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;color:var(--dark);border-bottom:1px solid #f5f5f5;font-size:14px;font-weight:500;transition:.2s;">
+              <i class="las la-shopping-bag" style="font-size:18px;color:#ee4d2d;"></i> Shopee
+            </a>
+            <a href="https://tokopedia.link/i1d8DERo8Wb" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;color:var(--dark);font-size:14px;font-weight:500;transition:.2s;">
+              <i class="las la-store" style="font-size:18px;color:#1db446;"></i> Tokopedia
+            </a>
+          </div>
+        </div>
+
+        <script>
+          function toggleOrderMenu() {
+            const menu = document.getElementById('orderMenu');
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+          }
+          document.addEventListener('click', (e) => {
+            if (!e.target.closest('[onclick="toggleOrderMenu()"]') && !e.target.closest('#orderMenu')) {
+              document.getElementById('orderMenu').style.display = 'none';
+            }
+          });
+        </script>
+        </div>
+    </div>
+</header>
+
+<!-- TITLE -->
+<section class="page-title">
+  <h1>Hubungi Kami</h1>
+  <p> Kami siap membantu mewujudkan rangkaian <br> bouquet terbaik untuk momen spesial Anda.<br>
+    Jangan ragu untuk menghubungi Rosavia Bouquet.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+
+  <!-- INFO -->
+  <div class="contact-info">
+
+    <div class="info-card">
+      <i class="lab la-whatsapp"></i>
+      <div>
+        <h4>WhatsApp</h4>
+        <a href="https://wa.me/6288270933960" target="_blank">+62 882-7093-3960</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <i class="lab la-instagram"></i>
+      <div>
+        <h4>Instagram</h4>
+        <a href="https://instagram.com/rosaviabouquet" target="_blank">@rosaviabouquet</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <i class="lab la-facebook"></i>
+      <div>
+        <h4>Facebook</h4>
+        <a href="https://www.facebook.com/rosaviabouquet" target="_blank">Rosavia Bouquet</a>
+      </div>
+    </div>
+
+ <div class="info-card">
+      <i class="fab fa-tiktok"></i>
+      <div>
+        <h4>TikTok</h4>
+        <a href="https://www.tiktok.com/@rosaviabouquet">@rosaviabouquet</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <i class="las la-envelope"></i>
+      <div>
+        <h4>Email</h4>
+        <p>rosaviabouquet@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="map-box">
+    <h3>Lokasi Kami</h3>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6202055454187!2d101.42352197349156!3d0.5709805635873024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5ab67086f2e89%3A0x65a24264fec306bb!2sPoliteknik%20Caltex%20Riau!5e0!3m2!1sid!2sid!4v1765914614218!5m2!1sid!2sid"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h3>Rosavia <span>Bouquet</span></h3>
+      <p>
+        Florist & gift arrangement dengan sentuhan elegan dan penuh makna.
+        Menghadirkan bouquet terbaik untuk setiap momen spesial Anda.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4>Menu</h4>
+      <a href="index.html">Home</a>
+      <a href="katalog.html">Katalog</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="index.html">Tentang Kami</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4>Kontak</h4>
+      <p><i class="las la-map-marker"></i> Pekanbaru, Riau</p>
+      <p><i class="las la-phone"></i> +62 812-3456-7890</p>
+      <p><i class="las la-envelope"></i> rosaviabouquet@gmail.com</p>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-social">
+      <h4>Ikuti Kami</h4>
+      <div class="social-icons">
+        <a href="https://instagram.com/rosaviabouquet" target="_blank" aria-label="Instagram">
+          <i class="lab la-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/17ZuBz5hnX/" target="_blank" aria-label="Facebook">
+          <i class="lab la-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@rosaviabouquet" target="_blank" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    © 2025 Rosavia Bouquet. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
